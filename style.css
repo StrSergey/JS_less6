@@ -1,0 +1,111 @@
+body {
+    background-color: lightgray;
+}
+
+/* ==================сам слайдер=================== */
+.slider {
+    max-width: 50%;
+    position: relative;
+    height: 300px;
+    margin: auto;
+}
+
+.slider .item {
+    text-align: center;
+}
+
+/*картинка масштабируется по отношению к родительскому элементу*/
+.slider .item img {
+    object-fit: scale-down;
+    width: 50%;
+    height: 300px;
+}
+
+/*================ кнопки вперед и назад ====================*/
+.slider .prev,
+.slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin: 0 20%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 3px;
+}
+
+.slider .next {
+    right: 0;
+    border-radius: 3px;
+}
+
+.slider .prev:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* =============заголовок слайда============ */
+.slideText {
+    position: absolute;
+    color: #fff;
+    font-size: 25px;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+}
+
+/* =================превью=================== */
+
+.slider-mini {
+    text-align: center;
+}
+
+.slider-mini_item {
+    object-fit: scale-down;
+    cursor: pointer;
+    height: 100%;
+    width: 70px;
+    margin: 0 5px;
+    display: inline-block;
+    transition: filter 0.6s ease;
+    filter: blur(2px);
+    opacity: 0.5;
+}
+
+.active,
+.slider-mini_item:hover {
+    opacity: 1;
+    filter: none;
+}
+
+/*============== анимация слайдов================= */
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
